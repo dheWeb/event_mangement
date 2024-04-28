@@ -15,11 +15,11 @@ const main = async () => {
 	try {
 		const AppDataSource =new DataSource({
       type: 'mysql',
-      host: 'localhost',
+      host: '185.199.52.88',
       port: 3306,
-      username: 'root',
-      password: undefined,
-      database: 'laravel_1',
+      username: 'epsarvatrco_ep',
+      password: "Sarvatr@12345",
+      database: 'epsarvatrco_tudu',
       	entities: [
           User,
           Event,
