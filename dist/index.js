@@ -26,11 +26,11 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const AppDataSource = new typeorm_1.DataSource({
             type: 'mysql',
-            host: 'localhost',
+            host: '185.199.52.88',
             port: 3306,
-            username: 'root',
-            password: undefined,
-            database: 'laravel_1',
+            username: 'epsarvatrco_ep',
+            password: "Sarvatr@12345",
+            database: 'epsarvatrco_tudu',
             entities: [
                 User_1.User,
                 Event_1.Event,

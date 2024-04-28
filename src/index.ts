@@ -26,7 +26,7 @@ const main = async () => {
           Booking
         ],
       synchronize: true,
-      logging: false,
+     
     });
     AppDataSource.initialize()
     .then(() => {
