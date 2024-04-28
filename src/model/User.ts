@@ -20,5 +20,5 @@ export class User extends BaseEntity {
     isActive: boolean = true
 
     @OneToMany(() => Booking, booking => booking.user)
-    bookings: Booking[] =[];
+    bookings!: Booking[] ;
 }

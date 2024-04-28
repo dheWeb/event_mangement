@@ -43,5 +43,5 @@ export class Event extends BaseEntity {
     booking_information!: { booking_open: boolean; booking_start_date: string; booking_end_date: string; booking_link: string };
 
     @OneToMany(() => Booking, booking => booking.event)
-    bookings: Booking[] = [];
+    bookings!: Booking[] ;
  }

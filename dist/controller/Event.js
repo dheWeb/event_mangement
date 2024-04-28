@@ -52,3 +52,8 @@ router.get("/api/events", (req, res) => __awaiter(void 0, void 0, void 0, functi
         res.status(500).json({ message: "Server Error" });
     }
 }));
+router.get("/api/events/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = parseInt(req.params.id);
+    const event = yield Event_1.Event.findOne({ where: { id } });
+    res.status(200).json({ message: " Events fetched successfully", event });
+}));

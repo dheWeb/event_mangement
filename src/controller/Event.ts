@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import multer from "multer";
 import { Event } from "../model/Event";
+import { User } from "../model/User";
 
 const router = express.Router();
 
@@ -45,5 +46,11 @@ router.get("/api/events", async (req: Request, res: Response) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+router.get("/api/events/:id", async (req: Request, res: Response ) => {
+  const id = parseInt(req.params.id);
+  const event = await Event.findOne({ where: { id } });
+  res.status(200).json({message :" Events fetched successfully" , event} )
+});
+
 
 export { router as createEventRouter };

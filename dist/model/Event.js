@@ -17,7 +17,6 @@ let Event = class Event extends typeorm_1.BaseEntity {
         super(...arguments);
         this.important_links = [];
         this.event_banner = "dummy.png";
-        this.bookings = [];
     }
 };
 exports.Event = Event;

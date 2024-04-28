@@ -21,18 +21,36 @@ const router = express_1.default.Router();
 exports.BookingRouter = router;
 router.post("/api/bookings", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { eventId, userId } = req.body;
-        const event = yield Event_1.Event.findOne(eventId);
-        const user = yield User_1.User.findOne(userId);
+        const { eventId, userId, quantity, total_price } = req.body;
+        const event = yield Event_1.Event.findOne({ where: { id: eventId } });
+        const user = yield User_1.User.findOne({ where: { id: userId } });
         if (!event || !user) {
             return res.status(404).json({ message: "Event or user not found" });
         }
-        const booking = Booking_1.Booking.create({ event, user });
+        const quantity_Int = parseInt(quantity);
+        const total_price_int = parseFloat(total_price);
+        const booking_date = new Date().toLocaleString();
+        const booking = Booking_1.Booking.create({ event, user, booking_date, quantity: quantity_Int, total_price: total_price_int });
         yield booking.save();
         res.status(201).json({ message: "Booking created successfully", booking });
     }
     catch (error) {
         console.error("Error creating booking:", error);
         res.status(500).json({ message: "Server Error" });
+    }
+}));
+router.post("/api/bookings/get", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { userId } = req.body;
+        if (!userId) {
+            return res.status(400).json({ error: "userId is required" });
+        }
+        const bookings = yield Booking_1.Booking.find({ where: { user: { id: userId } } });
+        const event = yield Booking_1.Booking.find({ where: { user: { id: userId } } });
+        res.status(200).json({ message: "Bookings fetched successfully", bookings });
+    }
+    catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 }));

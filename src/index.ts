@@ -3,7 +3,6 @@ import express from 'express';
 import { User } from './model/User';
 import { signupRouter } from './controller/signup';
 import { loginRouter } from './controller/login';
-
 import { Event } from './model/Event';
 import { createEventRouter } from './controller/Event';
 import { Booking } from './model/Booking';

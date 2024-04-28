@@ -16,7 +16,6 @@ let User = class User extends typeorm_1.BaseEntity {
     constructor() {
         super(...arguments);
         this.isActive = true;
-        this.bookings = [];
     }
 };
 exports.User = User;
