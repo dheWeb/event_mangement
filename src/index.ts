@@ -50,6 +50,7 @@ const main = async () => {
 		throw new Error('Unable to connect to db');
 	}
   
+  
 };
 
 main();
