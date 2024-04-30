@@ -26,18 +26,22 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const AppDataSource = new typeorm_1.DataSource({
             type: 'mysql',
-            host: '185.199.52.88',
+            // host: '185.199.52.88',
+            // port: 3306,
+            // username: 'epsarvatrco_ep',
+            // password: "Sarvatr@12345",
+            // database: 'epsarvatrco_tudu',
+            host: 'localhost',
             port: 3306,
-            username: 'epsarvatrco_ep',
-            password: "Sarvatr@12345",
-            database: 'epsarvatrco_tudu',
+            username: 'root',
+            password: undefined,
+            database: 'my_database1',
             entities: [
                 User_1.User,
                 Event_1.Event,
                 Booking_1.Booking
             ],
             synchronize: true,
-            logging: false,
         });
         AppDataSource.initialize()
             .then(() => {

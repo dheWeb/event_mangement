@@ -9,17 +9,23 @@ import { Booking } from './model/Booking';
 import { BookingRouter } from './controller/Booking';
 
 
+
 const app = express();
 
 const main = async () => {
 	try {
 		const AppDataSource =new DataSource({
       type: 'mysql',
-      host: '185.199.52.88',
-      port: 3306,
-      username: 'epsarvatrco_ep',
-      password: "Sarvatr@12345",
-      database: 'epsarvatrco_tudu',
+      // host: '185.199.52.88',
+      // port: 3306,
+      // username: 'epsarvatrco_ep',
+      // password: "Sarvatr@12345",
+      // database: 'epsarvatrco_tudu',
+      host: 'localhost',
+       port: 3306,
+       username: 'root',
+       password: undefined,
+       database: 'my_database1',
       	entities: [
           User,
           Event,
