@@ -16,6 +16,7 @@ const main = async () => {
 		const AppDataSource =new DataSource({
       type: 'mysql',
       host: '185.199.52.88',
+      
       port: 3306,
       username: 'epsarvatrco_ep',
       password: "Sarvatr@12345",
