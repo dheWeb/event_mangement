@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import generateToken from '../utils/generateToken';
 const router = express.Router();
 
+
 router.post('/api/signup', async (req, res) => {
     try {
         
