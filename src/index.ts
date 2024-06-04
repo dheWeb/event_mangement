@@ -7,8 +7,7 @@ import { Event } from './model/Event';
 import { createEventRouter } from './controller/Event';
 import { Booking } from './model/Booking';
 import { BookingRouter } from './controller/Booking';
-
-
+import cors from 'cors'; 
 
 const app = express();
 
@@ -42,7 +41,7 @@ const main = async () => {
         console.error("Error during Data Source initialization", err)
     })
 		console.log('Connected to Mysql');
-
+    app.use(cors()); 
 		app.use(express.json());
     app.use(signupRouter);
     app.use(loginRouter);

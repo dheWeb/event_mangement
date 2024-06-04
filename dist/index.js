@@ -21,6 +21,7 @@ const Event_1 = require("./model/Event");
 const Event_2 = require("./controller/Event");
 const Booking_1 = require("./model/Booking");
 const Booking_2 = require("./controller/Booking");
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -51,6 +52,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             console.error("Error during Data Source initialization", err);
         });
         console.log('Connected to Mysql');
+        app.use((0, cors_1.default)());
         app.use(express_1.default.json());
         app.use(signup_1.signupRouter);
         app.use(login_1.loginRouter);
