@@ -6,7 +6,7 @@ export class Event extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column()
+    @Column() 
     event_name!: string;
 
     @Column()
