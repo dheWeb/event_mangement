@@ -25,7 +25,7 @@ const main = async () => {
       //  port: 3306,
       //  username: 'root',
       //  password: undefined,
-      //  database: 'my_database1',
+      //  database: 'my_database1', 
       	entities: [
           User,
           Event,
