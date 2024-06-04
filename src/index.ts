@@ -31,7 +31,7 @@ const main = async () => {
           Event,
           Booking
         ],
-      synchronize: true,
+      // synchronize: true,
      
     });
     AppDataSource.initialize()
